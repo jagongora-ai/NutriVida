@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,28 +31,54 @@
         </div>
     </nav>
 </header>
+
 <body>
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
+        <div class="card p-4 mx-auto shadow-sm" style="max-width: 850px;">
+            <div class="row g-4">
 
-        <div class="card p-3 mx-auto" style="max-width: 800px;">
-            <div class="row">
-
+                <!-- Imagen y botón-->
                 <div class="col-md-5 text-center">
-                    <img src="imagenes/profesionales/medica 1.jpg" class="img-fluid rounded" height="300" alt="Doctora">
+                    <img src="imagenes/profesionales/medica 1.jpg" class="img-fluid rounded mb-3"
+                        alt="Dra. María Inés Sepúlveda" style="max-height: 320px; object-fit: cover;">
+
+                    <div class="d-grid gap-2 col-11 mx-auto">
+                        <a href="#" class="btn btn-primary fw-bold" role="button">Agenda tu hora</a>
+                        <a href="Profesionales.html" class="btn btn-outline-secondary btn-sm" role="button">Volver atrás</a>
+                    </div>
                 </div>
 
-                <!-- Columna Información -->
+                <!-- Informacion del profesional -->
                 <div class="col-md-7">
-                    <h2>Dra Maria Ines Sepúlveda</h2>
-                    <h5 class="text-primary">Especialista en Nutrición</h5>
-                    <hr>
-                    <p><strong>Ubicación:</strong> Temuco, Chile</p>
-                    <p><strong>Atención:</strong> Presencial y Online</p>
-                    <p><strong>Experiencia:</strong> Más de 10 años de experiencia en nutricion</p>
-                    
-                    <h5>Sobre mí</h5>
-                    <p>Médico enfocada en evaluación nutricional, tratamiento de sobrepeso y desarrollo de pautas personalizadas.</p>
+                    <h2 class="mb-1">Dra. María Inés Sepúlveda Rojas</h2>
+                    <h5 class="text-primary fw-semibold">Especialista en Nutrición y Pérdida de Peso</h5>
+                    <hr class="my-3">
+
+            
+                    <p class="mb-1"><strong>Ubicación:</strong> Temuco, Chile</p>
+                    <p class="mb-1"><strong>Atención:</strong> Presencial y Online</p>
+                    <p class="mb-3"><strong>Experiencia:</strong> Más de 10 años en nutrición clínica</p>
+
+                    <h5 class="fw-bold mt-3">Sobre mí</h5>
+                    <p class="text-muted">
+                        Médico enfocada en la creación de planes de alimentación equilibrados y personalizados para
+                        alcanzar y mantener un peso saludable de forma sostenible.
+                    </p>
+
+                    <h5 class="fw-bold mt-3">Estudios y Formación</h5>
+                    <ul class="list-unstyled text-muted small">
+                        <li><strong>Título de Cirujano y Nutricionista:</strong> Universidad de La Frontera</li>
+                        <li><strong>Magíster en Nutrición Clínica:</strong> Universidad de Chile</li>
+                        <li><strong>Diplomado en Manejo Integral del Sobrepeso y Obesidad</strong></li>
+                    </ul>
+
+                    <h5 class="fw-bold mt-3">Áreas de Especialización</h5>
+                    <div>
+                        <span class="badge bg-light text-dark border">Pérdida de Peso</span>
+                        <span class="badge bg-light text-dark border">Reeducación Alimentaria</span>
+                        <span class="badge bg-light text-dark border">Evaluación Antropométrica</span>
+                    </div>
                 </div>
 
             </div>
@@ -69,9 +96,10 @@
     </footer>
 
 
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
