@@ -12,20 +12,34 @@ function validarInicioSesion() {
 
     if (!formatoCorreo.test(correo)) {
         alert("Error en su correo " + correo + " es invalido, ingrese uno valido")
+        return false
     }
 
     if (correo.length > 100) {
         alert("El correo electronico no puede tener mas de 100 carteres")
+        return false
     } else if (clave.length > 10) {
         alert("la contraseña debe tener como minimo 4 caracteres y un maximo de 10")
+        return false
     }
+
 
     // validacion roles cliente/administrador
     if (correo == "medico@nutrivida.com" && clave == "medico2026") {
-        window.location.href = "admin.html"
+
+        document.getElementById("mensaje").textContent = "Ingresando.."
+        setTimeout(function () {
+            window.location.href = "admin.html"
+        }, 2000)
+
     } else if (correo == "paciente2026@gmail.com" && clave == "paciente67") {
-        window.location.href = "index.html" // lo llevara al inicio de pagina
+        setTimeout(function () {
+            document.getElementById("mensaje").textContent = "Ingresando"
+            window.location.href = "index.html" // lo llevara al inicio de pagina
+        }, 2000)
+
     } else {
         alert("Datos erroneos, vuelva intentarlo")
+        return false
     }
 }
