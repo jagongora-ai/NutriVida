@@ -1,5 +1,5 @@
 
-let profesionales = [
+let profesionalesOriginales = [
 
     {
         id: 1,
@@ -91,6 +91,14 @@ let profesionales = [
     }
 
 ];
+
+
+let profesionales;
+if (localStorage.getItem("profesionales")) {
+    profesionales = JSON.parse(localStorage.getItem("profesionales"));
+} else {
+    profesionales = profesionalesOriginales
+}
 
 
 let parametros = new URLSearchParams(window.location.search);

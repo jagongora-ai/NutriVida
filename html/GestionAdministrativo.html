@@ -28,13 +28,27 @@
             </div>
         </div>
     </nav>
-    <button> Agregar medico </button>
+
+    <h1>Nombre medico</h1>
+    <input type="text" id="nombreMedico">
+    <h1>Especialidad</h1>
+    <input type="text" id="especialidad">
+    <h1>Atencion</h1>
+    <input type="text" id="tipoAtencion">
+    <h1>experiencia laboral</h1>
+    <input type="text" id="experienciaLaboral">
+    <h1>Titulos</h1>
+    <input type="text" id="estudios">
+    <button onclick="agregarMedico()"> Agregar medico </button>
+    <button onclick="guardarCambios()"> guardarCambios </button>
+
     <br><br>
     <table>
         <thead>
             <tr>
                 <th>Nombre</th>
                 <th>Especialidad</th>
+                <th>experiencia</th>
                 <th>Estado</th>
                 <th>Acciones</th>
             </tr>
