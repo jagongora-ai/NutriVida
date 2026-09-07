@@ -6,12 +6,12 @@ function gestionarMedicos() {
             <tr>
                 <td>${profesionales[i].nombre}</td>
                 <td>${profesionales[i].especialidad}</td>
+                <td>${profesionales[i].atencion}</td>
                 <td>${profesionales[i].experiencia}</td>
                 <td>Activo</td>
                 <td>
                     <button onclick = "editar(${profesionales[i].id})">Editar</button>
-                    <button onclick = "eliminarMedico(${profesionales[i].id})">Eliminar</button>
-
+                    <button class= "boton-eliminar"onclick = "eliminarMedico(${profesionales[i].id})">Eliminar</button>
                 </td>
             </tr>
         `
@@ -38,6 +38,27 @@ function agregarMedico() {
 
     }
     let idNuevo = id + 1
+
+    if (nombre == "" || nombre.length >= 50) {
+        alert("No puede estar en blanco el nombre del medico y debe tener menos de 50 caracteres")
+        return false
+    }
+    if (especialidad == "" || especialidad.length > 50) {
+        alert("No puede estar en blanco la especialidad del nutricionista y debe tener menos de 50 caracteres")
+        return false
+    }
+    if (atencion == "" || atencion.length >= 20) {
+        alert("No puede estar en blanco el tipo de atencion del nutricionista y debe tener menos de 20 caracteres")
+        return false
+    }
+    if (experiencia == "" || experiencia.length > 100) {
+        alert("No puede estar en blanco la experiencia del nutricionista y debe tener menos de 100 caracteres")
+        return false
+    }
+    if (titulos == "" || titulos.length > 200) {
+        alert("No puede estar en blanco los titulos del nutricionista y debe tener menos de 200 caracteres")
+        return false
+    }
 
     let medicoNuevoAgregado = {
 
@@ -106,7 +127,7 @@ function guardarCambios() {
             posicionn = i
         }
     }
-    profesionales[posicionn].nombre  = nombre
+    profesionales[posicionn].nombre = nombre
     profesionales[posicionn].especialidad = especialidad
     profesionales[posicionn].atencion = atencion
     profesionales[posicionn].experiencia = experiencia
