@@ -69,6 +69,9 @@ formulario.addEventListener("submit", function (evento) {
     if (fechaNacimiento === "") {
         alert("Debe ingresar la fecha de nacimiento.");
         return;
+    } else if (new Date(fechaNacimiento) > new Date()) {
+        alert("La fecha de nacimiento no puede ser mayor a la fecha actual.");
+        return;
     }
 
 
