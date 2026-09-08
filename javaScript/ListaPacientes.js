@@ -1,130 +1,89 @@
-// Obtener los pacientes guardados
-let pacientes = JSON.parse(localStorage.getItem("pacientes")) || [];
+document.addEventListener("DOMContentLoaded", function () {
+    renderizarPacientes();
+});
 
 
-// Obtener el contenedor
-let listaPacientes = document.getElementById("listaPacientes");
+function obtenerPacientes() {
+    return JSON.parse(localStorage.getItem("pacientes")) || [];
+}
 
+function renderizarPacientes() {
+    const pacientes = obtenerPacientes();
+    const listaPacientes = document.getElementById("listaPacientes");
 
-// Verificar si existen pacientes
-if (pacientes.length === 0) {
+    if (!listaPacientes) return;
 
-    listaPacientes.innerHTML = `
-        <div class="alert alert-info text-center">
-            No hay pacientes registrados.
-        </div>
-    `;
-
-} else {
-
-
-    // Recorrer todos los pacientes
-    for (let i = 0; i < pacientes.length; i++) {
-
-        let paciente = pacientes[i];
-
-
-        // Crear tarjeta
-        listaPacientes.innerHTML += `
-
-            <div class="card shadow-sm border-0 mb-3">
-
-                <div class="card-body">
-
-                    <div class="row align-items-center">
-
-                        <div class="col-md-8">
-
-                            <h4 class="fw-bold">
-                                ${paciente.nombre}
-                            </h4>
-
-                            <p class="mb-1">
-                                <strong>RUT:</strong>
-                                ${paciente.rut}
-                            </p>
-
-                            <p class="mb-1">
-                                <strong>Edad:</strong>
-                                ${paciente.edad} años
-                            </p>
-
-                            <p class="mb-0">
-                                <strong>Tipo de alimentación:</strong>
-                                ${paciente.alimentacion}
-                            </p>
-
-                        </div>
-
-
-                        <div class="col-md-4 mt-3 mt-md-0">
-
-                            <div class="d-grid gap-2">
-
-                                <a href="FichaPacienteVer.html?id=${paciente.id}"
-                                    class="btn btn-primary">
-
-                                    Ver ficha
-
-                                </a>
-
-
-                                <button
-                                    class="btn btn-outline-danger"
-                                    onclick="eliminarPaciente(${paciente.id})">
-
-                                    Eliminar
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+    if (pacientes.length === 0) {
+        listaPacientes.innerHTML = `
+            <div class="alert alert-info text-center p-4 shadow-sm rounded-3">
+                <h5 class="alert-heading fw-bold mb-1">Sin registros</h5>
+                <p class="mb-0">No hay pacientes registrados actualmente en el sistema.</p>
             </div>
-
         `;
-
+        return;
     }
 
+    let htmlContent = "";
+
+    for (let i = 0; i < pacientes.length; i++) {
+        let paciente = pacientes[i];
+
+        htmlContent += `
+            <div class="card shadow-sm border-0 mb-3 rounded-3">
+                <div class="card-body p-4">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h4 class="fw-bold text-primary mb-2">
+                                ${paciente.nombre || "Sin Nombre"}
+                            </h4>
+                            <p class="mb-1 text-secondary">
+                                <strong>RUT:</strong> ${paciente.rut || "No registrado"}
+                            </p>
+                            <p class="mb-1 text-secondary">
+                                <strong>Edad:</strong> ${paciente.edad ? paciente.edad + " años" : "No registrada"}
+                            </p>
+                            <p class="mb-0 text-secondary">
+                                <strong>Tipo de alimentación:</strong> ${paciente.alimentacion || "No registrada"}
+                            </p>
+                        </div>
+
+                        <div class="col-md-4 mt-3 mt-md-0">
+                            <div class="d-grid gap-2">
+                                <a href="FichaPacienteVer.html?id=${paciente.id}" class="btn btn-primary">
+                                    Ver ficha
+                                </a>
+                                <a href="FichaPacienteEditar.html?id=${paciente.id}" class="btn btn-outline-secondary">
+                                    Editar
+                                </a>
+                                <button class="btn btn-outline-danger" onclick="eliminarPaciente(${paciente.id})">
+                                    Eliminar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    listaPacientes.innerHTML = htmlContent;
 }
 
 
-// =====================================
-// ELIMINAR PACIENTE
-// =====================================
-
 function eliminarPaciente(id) {
-
-    let confirmar = confirm(
-        "¿Está seguro de que desea eliminar este paciente?"
-    );
-
+    let confirmar = confirm("¿Está seguro de que desea eliminar este paciente?");
 
     if (confirmar) {
+        let pacientes = obtenerPacientes();
 
-        // Crear un nuevo arreglo sin el paciente seleccionado
+      
         pacientes = pacientes.filter(function (paciente) {
-
             return paciente.id !== id;
-
         });
 
+     
+        localStorage.setItem("pacientes", JSON.stringify(pacientes));
 
-        // Guardar nuevamente
-        localStorage.setItem(
-            "pacientes",
-            JSON.stringify(pacientes)
-        );
-
-
-        // Recargar la página
-        location.reload();
-
+        renderizarPacientes();
     }
-
 }
