@@ -4,311 +4,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>NutriVida - Ficha del Paciente</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKnuqkuIAvNWLzeN8tE5YBujZqJLB"
-        crossorigin="anonymous">
-
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos Personalizados -->
     <link rel="stylesheet" href="../estilos/estilos.css">
+
+    <!-- Script JS -->
+    <script src="../javaScript/FichaPacienteVer.js" defer></script>
 </head>
 
 
+
 <header>
-
     <nav class="navbar navbar-expand-lg">
-
         <div class="container-fluid">
-
-            <a class="navbar-brand" href="index.html"> </a>
-
-            <button class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-
-                <span class="navbar-toggler-icon"></span> </button>
-
-
+            <a class="navbar-brand fw-bold" href="../html/InicioMedico.html">Inicio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-
                 <div class="navbar-nav">
-
-                    <a class="nav-link" href="HistoriaClini.html">Historia Clinica</a>
-
-                    <a class="nav-link" href="Profesionales.html">Doctores </a>
-
-                    <a class="nav-link active" href="ListaPacientes.html">Pacientes</a>
-
+                    <a class="nav-link" href="../html/FichaPaciente.html">Crear Ficha</a>
+                    <a class="nav-link" href="../html/ListaPacientes.html">Registros</a>
                 </div>
-
             </div>
-
         </div>
-
     </nav>
-
 </header>
+<br>
+<body class="bg-light">
 
-
-<body>
-
+   
+    <!-- Contenido Principal -->
     <main class="container my-5">
 
         <div class="text-center mb-5">
-
-            <h1 class="display-5 fw-bold text-dark">Ficha del Paciente </h1>
-
-            <p class="lead text-muted"> Información registrada por el profesional</p>
-
+            <h1 class="display-5 fw-bold text-dark">Ficha del Paciente</h1>
+            <p class="lead text-muted">Información registrada por el profesional</p>
         </div>
 
+        <div class="p-4 mx-auto shadow-sm bg-white rounded" style="max-width: 900px;">
 
-        <div class="p-4 mx-auto shadow-sm" style="max-width: 900px;">
-
-            <h4 class="fw-bold mb-3">Datos personales </h4>
+            <!-- Sección: Datos Personales -->
+            <h4 class="fw-bold mb-3 text-primary">Datos personales</h4>
 
             <div class="row g-3">
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Nombre:</strong> <span id="nombre" class="text-secondary"></span></p>
+                </div>
 
                 <div class="col-md-6">
-                    <p>
-                        <strong>Nombre:</strong>
-                        <span id="nombre"></span>
-                    </p>
+                    <p class="mb-1"><strong>RUT:</strong> <span id="rut" class="text-secondary"></span></p>
                 </div>
-
-
-                <div class="col-md-6">
-                    <p>
-                        <strong>RUT:</strong>
-                        <span id="rut"></span>
-                    </p>
-                </div>
-
 
                 <div class="col-md-4">
-                    <p>
-                        <strong>Edad:</strong>
-                        <span id="edad"></span>
-                    </p>
+                    <p class="mb-1"><strong>Edad:</strong> <span id="edad" class="text-secondary"></span></p>
                 </div>
-
 
                 <div class="col-md-4">
-                    <p>
-                        <strong>Fecha de nacimiento:</strong>
-                        <span id="fechaNacimiento"></span>
-                    </p>
+                    <p class="mb-1"><strong>Fecha de nacimiento:</strong> <span id="fechaNacimiento"
+                            class="text-secondary"></span></p>
                 </div>
-
 
                 <div class="col-md-4">
-                    <p>
-                        <strong>Teléfono:</strong>
-                        <span id="telefono"></span>
-                    </p>
+                    <p class="mb-1"><strong>Teléfono:</strong> <span id="telefono" class="text-secondary"></span></p>
                 </div>
-
 
                 <div class="col-12">
-                    <p>
-                        <strong>Correo:</strong>
-                        <span id="correo"></span>
-                    </p>
+                    <p class="mb-1"><strong>Correo:</strong> <span id="correo" class="text-secondary"></span></p>
                 </div>
-
             </div>
-
 
             <hr class="my-4">
 
-
-            <h4 class="fw-bold mb-3">Antecedentes médicos</h4>
+            <!-- Sección: Antecedentes Médicos -->
+            <h4 class="fw-bold mb-3 text-primary">Antecedentes médicos</h4>
 
             <div class="mb-3">
-
                 <p class="mb-1"><strong>Enfermedades o condiciones médicas:</strong></p>
-
-                <p id="enfermedades" class="text-muted"></p>
-
+                <p id="enfermedades" class="text-muted p-2 bg-light rounded"></p>
             </div>
 
-
             <div class="mb-3">
-
                 <p class="mb-1"><strong>Alergias:</strong></p>
-
-                <p id="alergias" class="text-muted"></p>
-
+                <p id="alergias" class="text-muted p-2 bg-light rounded"></p>
             </div>
-
 
             <div class="mb-3">
-
                 <p class="mb-1"><strong>Medicamentos:</strong></p>
-
-                <p id="medicamentos" class="text-muted"></p>
-
+                <p id="medicamentos" class="text-muted p-2 bg-light rounded"></p>
             </div>
-
 
             <hr class="my-4">
 
-            <h4 class="fw-bold mb-3">Información alimentaria</h4>
+            <!-- Sección: Información Alimentaria -->
+            <h4 class="fw-bold mb-3 text-primary">Información alimentaria</h4>
 
-            <div class="row">
-
+            <div class="row g-3">
                 <div class="col-md-6">
-
-                    <p>
-                        <strong>Tipo de alimentación:</strong>
-                        <span id="alimentacion"></span>
-                    </p>
-
+                    <p class="mb-1"><strong>Tipo de alimentación:</strong> <span id="alimentacion"
+                            class="text-secondary"></span></p>
                 </div>
 
-
                 <div class="col-md-6">
-
-                    <p>
-                        <strong>Comidas al día:</strong>
-                        <span id="comidas"></span>
+                    <p class="mb-1"><strong>Comidas al día:</strong> <span id="comidas" class="text-secondary"></span>
                     </p>
-
                 </div>
 
-
                 <div class="col-md-6">
-
-                    <p>
-                        <strong>Vasos de agua al día:</strong>
-                        <span id="agua"></span>
-                    </p>
-
+                    <p class="mb-1"><strong>Vasos de agua al día:</strong> <span id="agua"
+                            class="text-secondary"></span></p>
                 </div>
 
-
                 <div class="col-md-6">
-
-                    <p>
-                        <strong>Actividad física:</strong>
-                        <span id="actividad"></span>
-                    </p>
-
+                    <p class="mb-1"><strong>Actividad física:</strong> <span id="actividad"
+                            class="text-secondary"></span></p>
                 </div>
-
             </div>
-
 
             <hr class="my-4">
 
+            <!-- Sección: Evaluación Nutricional -->
+            <h4 class="fw-bold mb-3 text-primary">Evaluación nutricional</h4>
 
-            <h4 class="fw-bold mb-3">Evaluación nutricional</h4>
-
-            <div class="row">
-
+            <div class="row g-3">
                 <div class="col-md-4">
-
-                    <p>
-                        <strong>Peso:</strong>
-                        <span id="peso"></span> kg
-                    </p>
-
+                    <p class="mb-1"><strong>Peso:</strong> <span id="peso" class="text-secondary"></span> kg</p>
                 </div>
 
-
                 <div class="col-md-4">
-
-                    <p>
-                        <strong>Estatura:</strong>
-                        <span id="estatura"></span> m
-                    </p>
-
+                    <p class="mb-1"><strong>Estatura:</strong> <span id="estatura" class="text-secondary"></span> m</p>
                 </div>
 
-
                 <div class="col-md-4">
-
-                    <p>
-                        <strong>IMC:</strong>
-                        <span id="imc"></span>
-                    </p>
-
+                    <p class="mb-1"><strong>IMC:</strong> <span id="imc" class="text-secondary"></span></p>
                 </div>
-
             </div>
-
 
             <div class="mt-3">
-
-                <p class="mb-1"> <strong>Objetivo nutricional:</strong></p>
-
-                <p id="objetivo" class="text-muted"></p>
-
+                <p class="mb-1"><strong>Objetivo nutricional:</strong></p>
+                <p id="objetivo" class="text-muted p-2 bg-light rounded"></p>
             </div>
-
 
             <hr class="my-4">
 
-            <h4 class="fw-bold mb-3"> Evaluación del profesional</h4>
+            <!-- Sección: Evaluación del Profesional -->
+            <h4 class="fw-bold mb-3 text-primary">Evaluación del profesional</h4>
 
             <div class="mb-3">
-
                 <p class="mb-1"><strong>Observaciones:</strong></p>
-
-                <p id="observaciones" class="text-muted"></p>
-
+                <p id="observaciones" class="text-muted p-2 bg-light rounded"></p>
             </div>
-
 
             <div class="mb-3">
-
-                <p class="mb-1"> <strong>Recomendaciones:</strong></p>
-
-                <p id="recomendaciones" class="text-muted"></p>
-
+                <p class="mb-1"><strong>Recomendaciones:</strong></p>
+                <p id="recomendaciones" class="text-muted p-2 bg-light rounded"></p>
             </div>
 
-
+            <!-- Botones de Acción -->
             <div class="d-grid mt-4">
-
-                <a href="../html/ListaPacientes.html" class="btn btn-outline-secondary"> Volver a pacientes </a>
-
+                <a href="ListaPacientes.html" class="btn btn-outline-secondary">Volver a pacientes</a>
             </div>
 
         </div>
 
     </main>
 
-
-    <footer class="text-blue text-center p-3 mt-4">
-
-        <p>
-            © Clínica <strong>NutriVida</strong> fundada en
-            <strong>2026</strong> en Temuco, Región de La Araucanía
-            <br>
-            Planes nutricionales personalizados enfocados en tu bienestar integral.
-        </p>
-
-        <p>
-            <strong>Ubicación:</strong> Temuco, Chile
-        </p>
-
+    <!-- Pie de Página -->
+    <footer footer class="text-blue text-center p-3 mt-4">
+        <p> © Clinica <strong>NutriVida</strong> fundada en <strong>2026</strong> en Temuco, Región de La
+            Araucanía <br> Años de calidad formando hitos para mejorar tu calidad de vida. Planes nutricionales
+            personalizados enfocados en tu bienestar integral.</p>
+        <br>
+        <p> <strong>Ubicacion:</strong> Temuco, chile</p>
     </footer>
 
-
-    <script src="../javaScript/FichaPacienteVer.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwxHj09JcYn3nv7wiPVlz7YYwJrVQcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous">
-    </script>
-
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
