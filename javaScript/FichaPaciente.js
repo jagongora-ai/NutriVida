@@ -176,8 +176,6 @@ formulario.addEventListener("submit", function (evento) {
 
     imc = imc.toFixed(2);
 
-
-
     document.getElementById("imc").value = imc;
 
 
@@ -191,8 +189,6 @@ formulario.addEventListener("submit", function (evento) {
         nuevoId = pacientes[pacientes.length - 1].id + 1;
 
     }
-
-
 
     let paciente = {
 
@@ -224,13 +220,9 @@ formulario.addEventListener("submit", function (evento) {
 
     };
 
-
-
     pacientes.push(paciente);
 
     localStorage.setItem("pacientes", JSON.stringify(pacientes));
-
-
 
     alert("La ficha del paciente se guardó correctamente.");
 
