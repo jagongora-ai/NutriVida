@@ -25,7 +25,7 @@ function validarInicioSesion() {
 
 
     // validacion roles cliente/administrador
-    if (correo == "medico@nutrivida.com" && clave == "medico2026") {
+    if (correo == "admin@nutrivida.com" && clave == "admin2026") {
 
         document.getElementById("mensaje").textContent = "Ingresando.."
         setTimeout(function () {
@@ -35,9 +35,14 @@ function validarInicioSesion() {
     } else if (correo == "paciente2026@gmail.com" && clave == "paciente67") {
         setTimeout(function () {
             document.getElementById("mensaje").textContent = "Ingresando"
-            window.location.href = "index.html" // lo llevara al inicio de pagina
+            window.location.href = "index.html" 
         }, 2000)
 
+    } else if (correo == "medico2026@nutrivida.com" && clave == "medico2026") {
+            setTimeout(function () {
+                document.getElementById("mensaje").textContent = "Ingresando"
+                window.location.href = "" 
+            }, 2000)
     } else {
         alert("Datos erroneos, vuelva intentarlo")
         return false
