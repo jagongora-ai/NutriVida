@@ -70,18 +70,20 @@ function renderizarPacientes() {
 }
 
 
+
+
 function eliminarPaciente(id) {
     let confirmar = confirm("¿Está seguro de que desea eliminar este paciente?");
 
     if (confirmar) {
         let pacientes = obtenerPacientes();
 
-      
+
         pacientes = pacientes.filter(function (paciente) {
             return paciente.id !== id;
         });
 
-     
+
         localStorage.setItem("pacientes", JSON.stringify(pacientes));
 
         renderizarPacientes();
