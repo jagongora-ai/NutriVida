@@ -51,7 +51,9 @@ function agendarCita(event) {
     };
 
     listaCitas.push(nuevaCita);
-    console.log("Historial de citas actual:", listaCitas);
+    localStorage.setItem('citasMedicas', JSON.stringify(listaCitas));
+
+    console.log("Historial de citas guardado en localStorage:", listaCitas);
 
     const htmlResumen = `
         <p><strong>Modalidad:</strong> ${especialidad}</p>
