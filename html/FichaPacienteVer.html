@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriVida - Ficha del Paciente</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="../estilos/estilos.css">
+
+    <!-- Script JS -->
+    <script src="../javaScript/FichaPacienteVer.js" defer></script>
+</head>
+
+
+
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="../html/InicioMedico.html">Inicio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="../html/FichaPaciente.html">Crear Ficha</a>
+                    <a class="nav-link" href="../html/ListaPacientes.html">Registros</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<br>
+<body class="bg-light">
+
+   
+   
+    <main class="container my-5">
+
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold text-dark">Ficha del Paciente</h1>
+            <p class="lead text-muted">Información registrada por el profesional</p>
+        </div>
+
+        <div class="p-4 mx-auto shadow-sm bg-white rounded" style="max-width: 900px;">
+
+           
+            <h4 class="fw-bold mb-3 text-primary">Datos personales</h4>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Nombre:</strong> <span id="nombre" class="text-secondary"></span></p>
+                </div>
+
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>RUT:</strong> <span id="rut" class="text-secondary"></span></p>
+                </div>
+
+                <div class="col-md-4">
+                    <p class="mb-1"><strong>Edad:</strong> <span id="edad" class="text-secondary"></span></p>
+                </div>
+
+                <div class="col-md-4">
+                    <p class="mb-1"><strong>Fecha de nacimiento:</strong> <span id="fechaNacimiento"
+                            class="text-secondary"></span></p>
+                </div>
+
+                <div class="col-md-4">
+                    <p class="mb-1"><strong>Teléfono:</strong> <span id="telefono" class="text-secondary"></span></p>
+                </div>
+
+                <div class="col-12">
+                    <p class="mb-1"><strong>Correo:</strong> <span id="correo" class="text-secondary"></span></p>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+           
+            <h4 class="fw-bold mb-3 text-primary">Antecedentes médicos</h4>
+
+            <div class="mb-3">
+                <p class="mb-1"><strong>Enfermedades o condiciones médicas:</strong></p>
+                <p id="enfermedades" class="text-muted p-2 bg-light rounded"></p>
+            </div>
+
+            <div class="mb-3">
+                <p class="mb-1"><strong>Alergias:</strong></p>
+                <p id="alergias" class="text-muted p-2 bg-light rounded"></p>
+            </div>
+
+            <div class="mb-3">
+                <p class="mb-1"><strong>Medicamentos:</strong></p>
+                <p id="medicamentos" class="text-muted p-2 bg-light rounded"></p>
+            </div>
+
+            <hr class="my-4">
+
+        
+            <h4 class="fw-bold mb-3 text-primary">Información alimentaria</h4>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Tipo de alimentación:</strong> <span id="alimentacion"
+                            class="text-secondary"></span></p>
+                </div>
+
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Comidas al día:</strong> <span id="comidas" class="text-secondary"></span>
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Vasos de agua al día:</strong> <span id="agua"
+                            class="text-secondary"></span></p>
+                </div>
+
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Actividad física:</strong> <span id="actividad"
+                            class="text-secondary"></span></p>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+    
+            <h4 class="fw-bold mb-3 text-primary">Evaluación nutricional</h4>
+
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <p class="mb-1"><strong>Peso:</strong> <span id="peso" class="text-secondary"></span> kg</p>
+                </div>
+
+                <div class="col-md-4">
+                    <p class="mb-1"><strong>Estatura:</strong> <span id="estatura" class="text-secondary"></span> m</p>
+                </div>
+
+                <div class="col-md-4">
+                    <p class="mb-1"><strong>IMC:</strong> <span id="imc" class="text-secondary"></span></p>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <p class="mb-1"><strong>Objetivo nutricional:</strong></p>
+                <p id="objetivo" class="text-muted p-2 bg-light rounded"></p>
+            </div>
+
+            <hr class="my-4">
+
+            <h4 class="fw-bold mb-3 text-primary">Evaluación del profesional</h4>
+
+            <div class="mb-3">
+                <p class="mb-1"><strong>Observaciones:</strong></p>
+                <p id="observaciones" class="text-muted p-2 bg-light rounded"></p>
+            </div>
+
+            <div class="mb-3">
+                <p class="mb-1"><strong>Recomendaciones:</strong></p>
+                <p id="recomendaciones" class="text-muted p-2 bg-light rounded"></p>
+            </div>
+
+            <div class="d-grid mt-4">
+                <a href="ListaPacientes.html" class="btn btn-outline-secondary">Volver a pacientes</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer footer class="text-blue text-center p-3 mt-4">
+        <p> © Clinica <strong>NutriVida</strong> fundada en <strong>2026</strong> en Temuco, Región de La
+            Araucanía <br> Años de calidad formando hitos para mejorar tu calidad de vida. Planes nutricionales
+            personalizados enfocados en tu bienestar integral.</p>
+        <br>
+        <p> <strong>Ubicacion:</strong> Temuco, chile</p>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

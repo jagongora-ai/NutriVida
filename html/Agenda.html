@@ -39,31 +39,34 @@
                 <p>¿Qué tipo de atención buscas y dónde quieres atenderte?</p>
             </div>
 
-            <!-- <form onsubmit="agendarCita(event)"> -->
             <form id="form-agendar" onsubmit="agendarCita(event)">
             
-
                 <div class="campo">
-                    <label for="especialidad">Especialidad</label>
+                    <label for="especialidad">Modalidad</label>
                     <select id="especialidad" required onchange="actualizarPrestashon()">
-                        <option value="Nutricionista" selected>Nutricionista</option>
-                        <option value="Nutricionista infantil">Nutriólogo deportivo</option>
+                        <option value="Presencial" selected>Presencial</option>
+                        <option value="Presencial en grupo">Presencial en grupo</option>
+                        <option value="Online (Video llamada)">Online (Video llamada)</option>
                     </select>
                 </div>
 
                 <div class="campo">
                     <label for="prestacion">Tipo de consulta</label>
                     <select id="prestacion" required>
-                        <option value="Consulta Nutricionista" selected>Consulta Nutricionista</option>
-                        <option value="Control Nutricional">Control Nutricional</option>
+                        <option value="Consulta" selected>Consulta</option>
+                        <option value="Plan especializado">Plan especializado</option>
+                        <option value="Evaluación">Evaluación</option>
+                        <option value="Taller Grupal" selected>Taller Grupal</option>
                     </select>
                 </div>
 
                 <div class="campo">
                     <label for="doctor">Doctor</label>
                     <select id="doctor" required>
-                        <option value="Dr. Juan Pérez">Dr. Juan Pérez (Nutrición)</option>
-                        <option value="Dra. María González">Dra. María González (Nutrición)</option>
+                        <option value="Nut. Rodrigo Sepúlveda">Nut. Rodrigo Sepúlveda</option>
+                        <option value="Nut. Felipe Araya">Nut. Felipe Araya</option>
+                        <option value="Nut. Daniela Morales">Nut. Daniela Morales</option>
+                        <option value="Nut. Carolina Fuentes">Nut. Carolina Fuentes</option>
                     </select>
                 </div>
 
