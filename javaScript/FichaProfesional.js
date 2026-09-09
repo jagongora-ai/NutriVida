@@ -4,7 +4,7 @@ let profesionalesOriginales = [
     {
         id: 1,
 
-        nombre: "Dra. María Inés Sepúlveda Rojas",
+        nombre: "Nut. Carolina Fuentes M.",
         especialidad: "Especialista en Nutrición y Pérdida de Peso",
         imagen: "../imagenes/Profesionales/medica 1.jpg",
         ubicacion: "Temuco, Chile",
@@ -26,8 +26,8 @@ let profesionalesOriginales = [
 
     {
         id: 2,
-        nombre: "Dr. Fernando Ignacio Gómez",
-        especialidad: "Especialista en Nutrición Clínica",
+        nombre: "Nut. Felipe Araya R.",
+        especialidad: "Especialista en Nutrición Clínica pediátrica y familiar",
         imagen: "../imagenes/Profesionales/medico 1.jpg",
         ubicacion: "Temuco, Chile",
         atencion: "Presencial y Online",
@@ -48,7 +48,7 @@ let profesionalesOriginales = [
 
     {
         id: 3,
-        nombre: "Dra. Lucía Andrea Hernández",
+        nombre: "Nut. Daniela Morales C.",
         especialidad: "Especialista en Nutrición Vegetariana y Vegana",
         imagen: "../imagenes/Profesionales/medica 2.jpg",
         ubicacion: "Temuco, Chile",
@@ -70,7 +70,7 @@ let profesionalesOriginales = [
 
     {
         id: 4,
-        nombre: "Dr. Ramón René Lira Monte",
+        nombre: "Nut. Rodrigo Sepúlveda A.",
         especialidad: "Especialista en Nutrición Deportiva",
         imagen: "../imagenes/Profesionales/medico 2.jpg",
         ubicacion: "Temuco, Chile",
