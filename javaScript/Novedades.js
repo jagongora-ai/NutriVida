@@ -73,7 +73,7 @@ function renderizarDetalle() {
                 ${publicacion.contenidoCompleto}
             </p>
             <div class="mt-4 text-center">
-                <a href="Novedades.html" class="btn btn-outline-secondary btn-sm" role="button">Volver a Novedades</a>
+                <a href="novedadesSinSesion.html" class="btn btn-outline-secondary btn-sm" role="button">Volver a Novedades</a>
             </div>
         </article>
     `;
