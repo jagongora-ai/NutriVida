@@ -47,7 +47,7 @@ function validarInicioSesion() {
     } else if (correo == "medico2026@nutrivida.com" && clave == "medico2026") {
         setTimeout(function () {
             document.getElementById("mensaje").textContent = "Ingresando"
-            window.location.href = ""
+            window.location.href = "../html/InicioMedico.html"
         }, 2000)
     } else {
         document.getElementById("mensaje").textContent = "Datos incorrecto, vuelva intentarlo"
