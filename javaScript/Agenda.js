@@ -1,13 +1,22 @@
-const listaCitas = [];
+const listaCitas = JSON.parse(localStorage.getItem('listaCitas')) || [];
 
 function agendarCita(event) {
     event.preventDefault();
-
     const especialidad = document.getElementById('especialidad').value;
     const prestacion = document.getElementById('prestacion').value;
     const doctor = document.getElementById('doctor').value;
     const fecha = document.getElementById('fecha').value;
     const hora = document.getElementById('hora').value;
+    
+    const [year, month, day] = fecha.split('-');
+    const fechaIngresada = new Date(year, month - 1, day);
+    const hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+
+    if (fechaIngresada < hoy) {
+        alert("La fecha de la cita no puede ser menor a la fecha actual.");
+        return false;
+    }
 
     let precio = 0;
 
@@ -18,7 +27,7 @@ function agendarCita(event) {
             precio = 20000;
         } else if (prestacion === "Plan especializado") {
             precio = 35000;
-        } else { 
+        } else {
             precio = 15000;
         }
     } else if (especialidad === "Presencial en grupo") {
@@ -27,8 +36,7 @@ function agendarCita(event) {
         } else {
             precio = 22000;
         }
-    } else { 
-        
+    } else {
         if (prestacion === "Consulta") {
             precio = 35000;
         } else if (prestacion === "Evaluación") {
@@ -52,8 +60,6 @@ function agendarCita(event) {
 
     listaCitas.push(nuevaCita);
     localStorage.setItem('listaCitas', JSON.stringify(listaCitas));
-
-    console.log("Historial de citas guardado en localStorage:", listaCitas);
 
     const htmlResumen = `
         <p><strong>Modalidad:</strong> ${especialidad}</p>
